@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kgw.PcReviewDao.MemberDao">
+	<select id="checklogin" resultType="kgw.PcReview.web.Vo.MemberVo">
+		select * from member order by id DESC
+	</select>
+	<insert id="insertlogin">
+		insert into member values(#{id},#{pass},#{levels})
+	</insert>
+	<update id="updatelogin">
+		update member set pass=#{pass},levels=#{levels} where id=#{id}
+	</update>
+	<delete id="deletelogin">
+		delete from member where id=#{id} and pass=#{pass}
+	</delete>
+</mapper>

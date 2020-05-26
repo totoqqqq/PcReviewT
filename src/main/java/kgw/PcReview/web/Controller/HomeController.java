@@ -29,8 +29,5 @@ public class HomeController {
 	public String resume() {
 		return "resume";
 	}
-	@RequestMapping("/login")
-	public String login() {
-		return "login";
-	}
 }
+

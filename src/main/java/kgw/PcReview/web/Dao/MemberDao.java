@@ -1,9 +1,11 @@
 package kgw.PcReview.web.Dao;
 
-import kgw.PcReview.web.Vo.MemberVo;
+import org.springframework.stereotype.Repository;
 
+import kgw.PcReview.web.Vo.MemberVo;
+@Repository
 public interface MemberDao {
-	MemberVo checklogin();
+	MemberVo checklogin(String id, String password);
 	MemberVo insertlogin();
 	MemberVo updatelogin();
 	MemberVo deletelogin();

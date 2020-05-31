@@ -17,19 +17,19 @@
 				<h3>로그인</h3>
 			</div>
 			<div class="card-body">
-				<form action=loginAction method="post">
+				<form action="loginAction" method="post">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="PcReviewID">
+						<input type="text" class="form-control" placeholder="PcReviewID" name=id>
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="PcReviewPassword">
+						<input type="password" class="form-control" placeholder="PcReviewPassword" name=pass>
 					</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">기억하기

@@ -9,23 +9,20 @@ public class MemberLoginServiceImpl implements MemberLoginService {
 	@Autowired
 	private MemberDao MemberDao;
 	@Override
-	public MemberVo checklogin() {
-		MemberVo member=MemberDao.checklogin();
+	public MemberVo checklogin(String id, String password) {
+		MemberVo member=MemberDao.checklogin(id, password);
 		return member;
 	}
 	@Override
-	public MemberVo insertlogin() {
-		MemberVo member=MemberDao.insertlogin();
-		return member;
+	public void insertlogin() {
+		MemberDao.insertlogin();
 	}
 	@Override
-	public MemberVo updatelogin() {
-		MemberVo member=MemberDao.updatelogin();
-		return member;
+	public void updatelogin() {
+		MemberDao.updatelogin();
 	}
 	@Override
-	public MemberVo deletelogin() {
-		MemberVo member=MemberDao.deletelogin();
-		return member;
+	public void deletelogin() {
+		MemberDao.deletelogin();
 	}
 }

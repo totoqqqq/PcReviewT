@@ -17,7 +17,7 @@
 				<h3>로그인</h3>
 			</div>
 			<div class="card-body">
-				<form action="loginAction" method="post">
+				<form action="loginAction" method="post" id="loginAction">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>

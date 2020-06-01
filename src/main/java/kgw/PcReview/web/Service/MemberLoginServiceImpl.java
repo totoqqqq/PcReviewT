@@ -1,28 +1,28 @@
 package kgw.PcReview.web.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import kgw.PcReview.web.Dao.MemberDao;
 import kgw.PcReview.web.Vo.MemberVo;
-
+@Service
 public class MemberLoginServiceImpl implements MemberLoginService {
 	@Autowired
 	private MemberDao MemberDao;
 	@Override
-	public MemberVo checklogin(String id, String password) {
-		MemberVo member=MemberDao.checklogin(id, password);
-		return member;
+	public MemberVo checklogin(String id, String pass) {
+		return MemberDao.checklogin(id,pass);
 	}
 	@Override
-	public void insertlogin() {
-		MemberDao.insertlogin();
+	public void insertlogin(String id, String pass,int levels) {
+		MemberDao.insertlogin(id,pass,levels);
 	}
 	@Override
-	public void updatelogin() {
-		MemberDao.updatelogin();
+	public void updatelogin(String id, String pass,int levels) {
+		MemberDao.updatelogin(id,pass,levels);
 	}
 	@Override
-	public void deletelogin() {
-		MemberDao.deletelogin();
+	public void deletelogin(String id, String pass) {
+		MemberDao.deletelogin(id,pass);
 	}
 }

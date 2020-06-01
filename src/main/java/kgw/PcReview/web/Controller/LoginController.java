@@ -24,6 +24,10 @@ public class LoginController {
 			//공란 경고창 기입예정
 		}
 		vo=MemberLoginServiceImpl.checklogin(vo.getId(),vo.getPass());
+		if(vo==null) {
+			return login();
+			//공란 경고창 기입예정
+		}
 		System.out.println(vo.getId()+vo.getPass()+vo.getLevels());
 		return "loginAction";
 	}

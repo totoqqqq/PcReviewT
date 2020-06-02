@@ -3,9 +3,9 @@
 <head>
 </head>
 <body>
-<%
-	String ID=request.getParameter("id");
-	String PassWord=request.getParameter("pass");
- %>
+전송 테스트 페이지<br>
+id : ${login.id}<br>
+pass : ${login.pass}<br>
+levels : ${login.levels}<br>
 </body>
 </html>

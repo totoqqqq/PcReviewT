@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
@@ -18,9 +19,13 @@
 
   <!-- Custom styles for this template -->
   <link href="resources/css/clean-blog.css" rel="stylesheet">
-
+<script>
+function openWin(){  
+    login=window.open("login", "로그인", "width=960, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=no");
+    login.resizeTo(960,700);
+    login.resizeBy(0,0);
+}</script>
 </head>
-
 <body>
 
   <!-- Navigation -->
@@ -45,6 +50,18 @@
           <li class="nav-item">
             <a class="nav-link" href="resume">Resume</a>
           </li>
+          <c:choose>
+          	  <c:when test="${empty login.id}">
+		          <li class="nav-item">
+		            <a class="nav-link" href="login">login</a>
+		          </li>
+	          </c:when>
+	          <c:when test="${not empty login.id}">
+		          <li class="nav-item">
+		            <a class="nav-link" href="logout">logout</a>
+		          </li>
+	          </c:when>
+          </c:choose>
         </ul>
       </div>
     </div>
@@ -68,7 +85,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto" style="text-align:center;">
-      <h1><a href="javascript:void(window.open('login','_blank','width=960, height=700', 'resizable=no', 'toolbars=no', 'menubar=no'))">시작하기</a></h1>
+      <h1><input type=button value="시작하기" onclick="javascript:openWin();" class="PcReviewWeb_btn"></h1>
       </div>
     </div>
   </div>

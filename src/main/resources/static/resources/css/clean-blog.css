@@ -3,6 +3,16 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-clean-blog/blob/master/LICENSE)
  */
+.PcReviewWeb_btn{
+	color: white;
+	background-color: #0080ff;
+	background-position:  0px 0px;
+	background-repeat: no-repeat;
+	height: 60px;
+	border: 0px;
+	cursor:pointer;
+	outline: 0;
+}
 
 .btn_login{
 /*	background-image: url('../img/login.png');*/

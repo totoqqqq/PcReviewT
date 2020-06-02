@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
@@ -45,6 +46,18 @@
           <li class="nav-item">
             <a class="nav-link" href="resume">Resume</a>
           </li>
+          <c:choose>
+          	  <c:when test="${empty login.id}">
+		          <li class="nav-item">
+		            <a class="nav-link" href="login">login</a>
+		          </li>
+	          </c:when>
+	          <c:when test="${not empty login.id}">
+		          <li class="nav-item">
+		            <a class="nav-link" href="logout">logout</a>
+		          </li>
+	          </c:when>
+          </c:choose>
         </ul>
       </div>
     </div>

@@ -21,7 +21,7 @@
   <link href="resources/css/clean-blog.css" rel="stylesheet">
 <script>
 function openWin(){  
-    login=window.open("login", "로그인", "width=960, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=no");
+    login=window.open("PcReview/SinglePartReview", "로그인", "width=960, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=no");
     login.resizeTo(960,700);
     login.resizeBy(0,0);
 }</script>
@@ -53,7 +53,7 @@ function openWin(){
           <c:choose>
           	  <c:when test="${empty login.id}">
 		          <li class="nav-item">
-		            <a class="nav-link" href="login">login</a>
+		            <a class="nav-link" href="login" >login</a>
 		          </li>
 	          </c:when>
 	          <c:when test="${not empty login.id}">

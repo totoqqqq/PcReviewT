@@ -19,6 +19,15 @@ public class MemberLoginServiceImpl implements MemberLoginService {
 		}
 	}
 	@Override
+	public MemberVo check(String id) {
+		try {
+		return MemberDao.check(id);
+		}
+		catch(NullPointerException e) {
+			return null;
+		}
+	}
+	@Override
 	public void insertlogin(String id, String pass,int levels) {
 		MemberDao.insertlogin(id,pass,levels);
 	}

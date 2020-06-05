@@ -29,6 +29,14 @@
 			<h1>단일 부품 비교(관리자)</h1>
 		</div>
 	</div>
+		<div class="container">
+		<form action="searchPartAction" method="post" id="searchPartAction">
+		<div class="col-lg-16 col-md-10 mx-auto" style="text-align:center;">
+			<input type="text" placeholder="검색할 부품명을 입력하세요" name=partname>
+			<input type="submit" value="search">
+		</div>
+		</form>
+	</div>
 	<div class="container">
 		<div class="col-lg-12 col-md-10 mx-auto">
 			<table class="table table-bordered">

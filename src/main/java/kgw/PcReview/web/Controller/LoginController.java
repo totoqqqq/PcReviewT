@@ -45,10 +45,12 @@ public class LoginController {
 		member.put("levels",vo.getLevels());
 		model.addAttribute("login", vo);
 		try {
-			if(!url.equals(request.getHeader("Referer")))
+			if(!url.equals(request.getHeader("Referer"))) {
 				return "redirect:"+url;
-			else
+			}
+			else {
 				return "redirect:index";
+				}
 			}
 		catch(NullPointerException e){
 			return "redirect:index";
@@ -59,5 +61,39 @@ public class LoginController {
 		status.setComplete();
 		url="";
 		return "redirect:"+request.getHeader("Referer");
+	}
+	@RequestMapping("/memberSign")
+	public String memberSign(SessionStatus status, HttpServletRequest request) {
+		status.setComplete();
+		url="";
+		return "memberSign";
+	}
+	@RequestMapping("/signAction")
+	public String SignAction(MemberVo vo, Model model, RedirectAttributes redirectAttributes, HttpSession session, HttpServletRequest request) {
+		if(vo.getId().toString().replace(" ","").equals("")||vo.getId().equals(null)||vo.getPass().toString().replace(" ","").equals("")||vo.getPass().equals(null)) {
+			return "redirect:/memberSign";
+			//공란 경고창 기입예정
+		}	
+		MemberVo check=MemberLoginServiceImpl.check(vo.getId());
+		if(check!=null) {
+			return "redirect:/memberSign";
+			//공란 경고창 기입예정
+		}
+		MemberLoginServiceImpl.insertlogin(vo.getId(),vo.getPass(),1);
+		Map<String,Object> member=new HashMap<String,Object>();
+		member.put("id",vo.getId());
+		member.put("pass",vo.getPass());
+		member.put("levels",vo.getLevels());
+		model.addAttribute("login", vo);
+		//회원 가입완료 메세지 입력예정 
+		try {
+			if(!url.equals(request.getHeader("Referer")))
+				return "redirect:"+url;
+			else
+				return "redirect:index";
+			}
+		catch(NullPointerException e){
+			return "redirect:index";
+		}
 	}
 }

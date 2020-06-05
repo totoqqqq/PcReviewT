@@ -4,6 +4,9 @@
 	<select id="checklogin" parameterType="kgw.PcReview.web.Vo.MemberVo" resultType="kgw.PcReview.web.Vo.MemberVo">
 		select * from member where id=#{id} and pass=#{pass}
 	</select>
+	<select id="check" parameterType="kgw.PcReview.web.Vo.MemberVo" resultType="kgw.PcReview.web.Vo.MemberVo">
+		select * from member where id=#{id}
+	</select>
 	<insert id="insertlogin" parameterType="kgw.PcReview.web.Vo.MemberVo">
 		insert into member values(#{id},#{pass},#{levels})
 	</insert>

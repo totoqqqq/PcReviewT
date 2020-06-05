@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kgw.PcReview.web.Dao.PartinfoDao">
+	<select id="searchPart" parameterType="kgw.PcReview.web.Vo.PartinfoVo" resultType="kgw.PcReview.web.Vo.PartinfoVo">
+		select * from partinfo where parttype=#{parttype} and partname=#{partname}
+	</select>
+	<select id="searchPartAll" parameterType="kgw.PcReview.web.Vo.PartinfoVo" resultType="kgw.PcReview.web.Vo.PartinfoVo">
+		select * from partinfo where parttype=#{parttype}
+	</select>
+	<insert id="insertPart" parameterType="kgw.PcReview.web.Vo.PartinfoVo">
+		insert into partinfo values(#parttype},#{partname},#{maker},#{info1},#{info2},#{info3},#{info4})
+	</insert>
+	<update id="updatePart" parameterType="kgw.PcReview.web.Vo.PartinfoVo">
+		update partinfo set maker=#{maker},info1=#{info1},info1=#{info2},info1=#{info3},info1=#{info4} where parttype=#{parttype} and partname=#{partname}
+	</update>
+	<delete id="deletePart" parameterType="kgw.PcReview.web.Vo.PartinfoVo">
+		delete from partinfo where parttype=#{parttype} and partname=#{partname}
+	</delete>
+</mapper>

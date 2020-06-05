@@ -13,6 +13,13 @@ public class PcReviewWebController {
 	@RequestMapping("/SinglePartReview")
 	public String SingPartHome(Model model){
 		MemberVo member=(MemberVo) model.getAttribute("login");
+		if(member==null)
+			return "redirect:../login";
+		return "SinglePartHome";
+	}
+	@RequestMapping("/searchPartInfo")
+	public String searchPart(Model model){
+		MemberVo member=(MemberVo) model.getAttribute("login");
 		return "SinglePartHome";
 	}
 }

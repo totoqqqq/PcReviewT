@@ -5,4 +5,4 @@ Bootstrap, Git, Java, JQuery, Jsp, Jstl, Lombok, Maven, MyBatis, Oracle, Spring-
 # 구현 내역
 로그인, 회원가입
 # 프로그램 시연 영상(임시)
-https://drive.google.com/file/d/1lbEhaGKBwOudz7Q9p9nhkK1waMhHNgbS/view?usp=sharing
+https://drive.google.com/file/d/1nd1YNdqvRoU7QWE3XX1HkH-atHDw6EDW/view?usp=sharing
